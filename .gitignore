@@ -1,0 +1,21 @@
+# Local .terraform directories and files
+**/.terraform/*
+.terraform*
+
+!.terraformrc
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# own secret vars store.
+personal.auto.tfvars
+
+# Terraform variables with secrets
+*.tfvars
+*.tfvars.json
+
+# Yandex Cloud service account keys
+authorized_key.json
+service-account-key.json
+key.json
