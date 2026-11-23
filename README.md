@@ -59,3 +59,47 @@
 5. Повторно выполнил `terraform apply`. Вторая ВМ успешно создана. Обе машины работают, что подтверждается скриншотом.
 
    ![Две ВМ в Yandex Cloud](screenshots/04_two_vms.png)
+
+
+
+## Задание 4
+
+1. Создал в `outputs.tf` один output `vm_info` для вывода информации о двух ВМ.
+
+2. Выполнил `terraform apply`. Конфигурация ВМ не поменялась.
+
+3. Команда `terraform output` вывела имена, внешние IP и FQDN обеих машин.
+
+   ![Terraform output](screenshots/05_terraform_output.png)
+
+
+
+## Задание 5
+
+1. Добавил переменные для формирования имён ВМ в файл `vms_platform.tf`.
+
+2. В файле `locals.tf` создал один блок `locals` с именами двух ВМ, используя `${...}`.
+
+3. В `main.tf` заменил имена ВМ на `local.vm_web_name` и `local.vm_db_name`.
+
+4. Выполнил `terraform plan` и `terraform apply`. Изменений нет, обе ВМ остались без изменений.
+
+   ![Проверка terraform plan](screenshots/06_locals_plan.png)
+
+
+
+## Задание 6
+
+1. Объединил параметры процессора и памяти обеих ВМ в одну переменную `vms_resources` типа `map(object)`.
+
+2. Создал общую переменную `metadata` для обеих машин.
+
+3. Заменил старые переменные в `main.tf` на новые.
+
+4. Закомментировал переменные, которые больше не используются.
+
+5. Выполнил `terraform validate` и `terraform plan`. Ошибок нет, изменений в инфраструктуре нет.
+
+   ![Terraform plan](screenshots/07_resources_plan.png)
+
+
