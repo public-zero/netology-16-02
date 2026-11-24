@@ -132,3 +132,14 @@
 
    ![Terraform console, задание 8](screenshots/09_terraform_console_test.png)
 
+
+## Удаление ресурсов
+
+После выполнения заданий удалил созданные ресурсы командой `terraform destroy`.
+
+Результат: `Destroy complete! Resources: 5 destroyed.`
+
+Проверил `terraform state list` — список ресурсов пуст.
+
+![Удаление ресурсов Terraform](screenshots/10_terraform_destroy.png)
+
