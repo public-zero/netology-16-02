@@ -38,3 +38,7 @@ variable "vpc_name" {
 #  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIByFCsShTgPilfjj8c++36yOuZ2wwDfMXDhFtbG+fiSx student@ubuntu-2204-host-01"
 #  description = "ssh-keygen -t ed25519"
 # }
+
+variable "test" {
+  type = list(map(list(string)))
+}

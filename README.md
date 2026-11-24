@@ -103,3 +103,32 @@
    ![Terraform plan](screenshots/07_resources_plan.png)
 
 
+
+## Задание 7*
+
+В `terraform console` выполнил четыре задания:
+
+1. Второй элемент списка: `local.test_list[1]` — `"staging"`.
+2. Длина списка: `length(local.test_list)` — `3`.
+3. Значение ключа admin: `local.test_map["admin"]` — `"John"`.
+4. Составил строку с помощью переменных из `console.tf` и функции `length()`.
+   Выражение: `${local.test_map.admin} is ${keys(local.test_map)[0]} for ${local.test_list[2]} server based on OS ${local.servers.production.image} with ${local.servers.production.cpu} vcpu, ${local.servers.production.ram} ram and ${length(local.servers.production.disks)} virtual disks`
+
+   Результат: `John is admin for production server based on OS ubuntu-20-04 with 10 vcpu, 40 ram and 4 virtual disks`.
+
+   ![Terraform console](screenshots/08_terraform_console.png)
+
+
+
+## Задание 8*
+
+1. Создал переменную `test` в `variables.tf` с типом `list(map(list(string)))`.
+2. Добавил значения переменной в `terraform.tfvars` согласно заданию. Создал копию `terraform.tfvars.example` для GitHub, так как `terraform.tfvars` исключён через `.gitignore`.
+3. Проверил получение SSH-команды через `terraform console`:
+
+   `var.test[0]["dev1"][0]`
+
+   Результат: `ssh -o 'StrictHostKeyChecking=no' ubuntu@62.84.124.117`.
+
+   ![Terraform console, задание 8](screenshots/09_terraform_console_test.png)
+
